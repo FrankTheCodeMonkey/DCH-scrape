@@ -1,0 +1,30 @@
+Sorry for the late reply, but here's my current solution (which works well for me):
+
+Use the number (5 digits) at the end of the url.
+
+Example: The concert number of https://www.digitalconcerthall.com/en/concert/52518 is 52518.
+
+Referring to the setlist below the video, 1st track is 52518-1, 2nd track is 52518-2, etc.
+
+The links below are for you to replace '#' or '#-#' with the digits, for downloading the entire concert or part of the concert respectively.
+
+For normal concerts:
+
+https://world-vod.dchdns.net/hlss/dch/#-#/,h264_LOW_THREE,h264_HIGH,h264_VERY_HIGH_ONE,.mp4.urlset/master.m3u8
+
+For education concerts:
+
+https://world-vod.dchdns.net/hlss/dch/#-#/,h264_LOW_THREE,h264_LOW_TWO,h264_LOW_ONE,h264_MEDIUM_TWO,h264_MEDIUM_ONE,h264_HIGH,h264_VERY_HIGH_ONE,_en.mp4.urlset/master.m3u8
+
+or:
+
+https://world-vod.dchdns.net/hlss/dch/#-#/,h264_LOW_THREE,h264_LOW_TWO,h264_LOW_ONE,h264_MEDIUM_TWO,h264_MEDIUM_ONE,h264_HIGH,h264_VERY_HIGH_ONE,.mp4.urlset/master.m3u8
+
+For films:
+
+https://world-vod.dchdns.net/hlss/dch/#/,h264_LOW_THREE,h264_LOW_TWO,h264_LOW_ONE,h264_MEDIUM_TWO,h264_MEDIUM_ONE,h264_HIGH,h264_VERY_HIGH_ONE,.mp4.urlset/master.m3u8
+
+For interviews:
+
+https://world-vod.dchdns.net/hlss/dch/#-#/,h264_LOW_THREE,h264_LOW_TWO,h264_LOW_ONE,h264_MEDIUM_TWO,h264_MEDIUM_ONE,h264_HIGH,h264_VERY_HIGH_ONE,.mp4.urlset/master.m3u8
+
