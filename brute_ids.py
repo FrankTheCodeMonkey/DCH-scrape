@@ -16,7 +16,9 @@ for i in range(11000, 53100):
         if f:
             f.close()
 
-        f = open('result-{}-{}.txt'.format(time, i // PAGINATION_LIMIT), 'w')
+        file_name = 'result-{}-{}.txt'.format(time, i // PAGINATION_LIMIT)
+        f = open(file_name, 'w')
+        print('current file', file_name)
 
     response = requests.get(base.format(index), verify=False)
     if response.status_code == 200:
