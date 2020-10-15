@@ -52,8 +52,6 @@ def scape_concert(concert_id):
 
     data = {}
     data['concert_type'] = 'EDUCATION' if concert_id in EDUCATION else 'PERFORMANCE'
-    data['download_link'] = DOWNLOAD_LINKS[data['concert_type']]
-
     data['concert_title'] = str(soup.h1.get_text())
     data['concert_artist'] = str(soup.find_all('p', { 'class': 'mainArtist' })[0].get_text(" | "))
     data['concert_date'] = str(soup.find_all('p', { 'class': 'concertMeta' })[0].get_text())
@@ -68,6 +66,8 @@ def scape_concert(concert_id):
 
         # ID we'll use for the file name
         additional_params['repertoire_file'] = piece['id']
+        # https://.../123-1/...m3u8
+        additional_params['download_link'] = DOWNLOAD_LINKS[data['concert_type']].format(piece['id'])
 
         # Title of the piece
         piece_title = _clean(piece.find('h2').get_text())
