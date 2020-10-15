@@ -11,28 +11,28 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 base_url = 'https://www.digitalconcerthall.com/en/concert/{}'
 schema = [
+    'concert_type',
     'concert_date',
     'concert_title',
     'concert_artist',
     'repertoire_file',
     'repertoire_title',
     'repertoire_artist',
-    'repertoire_duration',
+    'repertoire_duration'
 ]
 
+# TODO: PLEASE MAINTAIN
 EDUCATION = {
-     '52651', '52033', '51962', '51699', '51482', '51364', '23519', '23870', '23837', '23819', '22419', '22626', '22564', '21055', '21028', '21073', '17418', '17408', '4103', '17322', '4087', '4083', '2583', '2877', '2866', '2862', '65', '1734', '1587', '1572', '58', '63', '1588', '1737', '64',
+     '52651', '52033', '51962', '51699', '51482', '51364', '23519', '23870', '23837', '23819', '22419', '22626', '22564', '21055', '21028', '21073', '17418', '17408', '4103', '17322', '4087', '4083', '2583', '2877', '2866', '2862', '65', '1734', '1587', '1572', '58', '63', '1588', '1737', '64'
 }
 
+# TODO: PLEASE MAINTAIN
 FILMS = {
      '371', '370', '369', '368', '250', '307', '215', '366', '308', '367', '365', '364', '363', '362', '360', '359', '358', '306', '357', '356', '304', '300', '233', '232', '302', '301', '231', '230', '225', '223', '227', '226', '211', '203', '213', '114', '104', '101', '74', '108', '109', '110', '113', '355', '354', '352', '353', '351', '350', '115', '112', '229', '228'
 }
 
 
 def scape_concert(concert_id):
-    if concert_id in EDUCATION:
-        return []
-
     if concert_id in FILMS:
         return []
 
@@ -45,6 +45,7 @@ def scape_concert(concert_id):
     soup = BeautifulSoup(response.text.encode('utf-8'), features='html.parser')
 
     data = {}
+    data['concert_type'] = 'EDUCATION' if concert_id in EDUCATION else 'PERFORMANCE'
     data['concert_title'] = str(soup.h1.get_text())
     data['concert_artist'] = str(soup.find_all('p', { 'class': 'mainArtist' })[0].get_text(" | "))
     data['concert_date'] = str(soup.find_all('p', { 'class': 'concertMeta' })[0].get_text())

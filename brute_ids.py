@@ -11,6 +11,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 time = str(arrow.utcnow().format('YYYYMMDDHHmmss'))
 PAGINATION_LIMIT = 500
+
+# TODO: PLEASE MAINTAIN
 CURRENT_ID_MAX = 53100
 
 f = None
