@@ -18,8 +18,14 @@ schema = [
     'repertoire_file',
     'repertoire_title',
     'repertoire_artist',
-    'repertoire_duration'
+    'repertoire_duration',
+    'download_link'
 ]
+
+DOWNLOAD_LINKS = {
+    'EDUCATION': 'https://world-vod.dchdns.net/hlss/dch/{}/,h264_LOW_THREE,h264_LOW_TWO,h264_LOW_ONE,h264_MEDIUM_TWO,h264_MEDIUM_ONE,h264_HIGH,h264_VERY_HIGH_ONE,_en.mp4.urlset/master.m3u8',
+    'PERFORMANCE': 'https://world-vod.dchdns.net/hlss/dch/{}/,h264_LOW_THREE,h264_HIGH,h264_VERY_HIGH_ONE,.mp4.urlset/master.m3u8'
+}
 
 # TODO: PLEASE MAINTAIN
 EDUCATION = {
@@ -46,6 +52,8 @@ def scape_concert(concert_id):
 
     data = {}
     data['concert_type'] = 'EDUCATION' if concert_id in EDUCATION else 'PERFORMANCE'
+    data['download_link'] = DOWNLOAD_LINKS[data['concert_type']]
+
     data['concert_title'] = str(soup.h1.get_text())
     data['concert_artist'] = str(soup.find_all('p', { 'class': 'mainArtist' })[0].get_text(" | "))
     data['concert_date'] = str(soup.find_all('p', { 'class': 'concertMeta' })[0].get_text())
