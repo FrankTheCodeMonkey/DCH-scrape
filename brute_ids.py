@@ -1,3 +1,6 @@
+"""
+Literally just brute for the ID and look for the 200s and 404s
+"""
 import requests
 import urllib3
 import arrow
@@ -8,9 +11,10 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 time = str(arrow.utcnow().format('YYYYMMDDHHmmss'))
 PAGINATION_LIMIT = 500
+CURRENT_ID_MAX = 53100
 
 f = None
-for i in range(11000, 53100):
+for i in range(0, CURRENT_ID_MAX):
     index = str(i)
     if i % PAGINATION_LIMIT == 0:
         if f:
