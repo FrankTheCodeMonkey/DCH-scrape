@@ -1,0 +1,81 @@
+SKIPPED: 74
+SKIPPED: 101
+SKIPPED: 104
+FAILED: 105
+Traceback (most recent call last):
+  File "scrape-concerts.py", line 106, in start_scraping
+    concert_pieces = scape_concert(concert_id)
+  File "scrape-concerts.py", line 55, in scape_concert
+    data['concert_title'] = str(soup.h1.get_text())
+AttributeError: 'NoneType' object has no attribute 'get_text'
+SKIPPED: 108
+SKIPPED: 109
+SKIPPED: 110
+FAILED: 111
+Traceback (most recent call last):
+  File "scrape-concerts.py", line 106, in start_scraping
+    concert_pieces = scape_concert(concert_id)
+  File "scrape-concerts.py", line 55, in scape_concert
+    data['concert_title'] = str(soup.h1.get_text())
+AttributeError: 'NoneType' object has no attribute 'get_text'
+SKIPPED: 112
+SKIPPED: 113
+SKIPPED: 114
+SKIPPED: 115
+SKIPPED: 203
+FAILED: 207
+Traceback (most recent call last):
+  File "scrape-concerts.py", line 106, in start_scraping
+    concert_pieces = scape_concert(concert_id)
+  File "scrape-concerts.py", line 55, in scape_concert
+    data['concert_title'] = str(soup.h1.get_text())
+AttributeError: 'NoneType' object has no attribute 'get_text'
+SKIPPED: 211
+SKIPPED: 213
+SKIPPED: 215
+SKIPPED: 223
+SKIPPED: 225
+SKIPPED: 226
+SKIPPED: 227
+SKIPPED: 228
+SKIPPED: 229
+SKIPPED: 230
+SKIPPED: 231
+SKIPPED: 232
+SKIPPED: 233
+SKIPPED: 250
+SKIPPED: 300
+SKIPPED: 301
+SKIPPED: 302
+SKIPPED: 304
+SKIPPED: 306
+SKIPPED: 307
+SKIPPED: 308
+SKIPPED: 350
+SKIPPED: 351
+SKIPPED: 352
+SKIPPED: 353
+SKIPPED: 354
+SKIPPED: 355
+SKIPPED: 356
+SKIPPED: 357
+SKIPPED: 358
+SKIPPED: 359
+SKIPPED: 360
+FAILED: 361
+Traceback (most recent call last):
+  File "scrape-concerts.py", line 106, in start_scraping
+    concert_pieces = scape_concert(concert_id)
+  File "scrape-concerts.py", line 56, in scape_concert
+    data['concert_artist'] = str(soup.find_all('p', { 'class': 'mainArtist' })[0].get_text(" | "))
+IndexError: list index out of range
+SKIPPED: 362
+SKIPPED: 363
+SKIPPED: 364
+SKIPPED: 365
+SKIPPED: 366
+SKIPPED: 367
+SKIPPED: 368
+SKIPPED: 369
+SKIPPED: 370
+SKIPPED: 371
